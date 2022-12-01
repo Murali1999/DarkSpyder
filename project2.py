@@ -138,7 +138,7 @@ if (args.s):
         #https://ahmia.fi/search/?q={}
         #a list of all links crawled by the search engine
         linklist=[]
-        j=1
+        i=1
         query = query.replace(' ','+')
         page = session.get("https://ahmia.fi/search/?q={}".format(query), headers=headers)
         soup = BeautifulSoup(page.content,'html.parser')
@@ -148,7 +148,7 @@ if (args.s):
             linklist.append(li.cite.text)
         print(colored("%sCRAWLING COMPLETE. \n", "blue") % (attr("bold")))
         for i in progressbar(range(len(linklist)), redirect_stdout=True): 
-            print(str(j) + '. ' + linklist[i]) 
+            print(str(i+1) + '. ' + linklist[i]) 
             time.sleep(0.1)
         print("\nGot " + str(len(linklist)) + " links. \n") 
         #add .onion links to a file
