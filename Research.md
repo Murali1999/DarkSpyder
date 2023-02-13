@@ -22,7 +22,7 @@ curl --proxy proxy1.example.com:8080 --proxy-connect-timeout 10 --proxy-tunnel -
 ```
 - In this example, the request is sent through two proxy servers, proxy1.example.com and proxy2.example.com, and it takes up to 10 seconds to connect to the first proxy server. Both proxy servers require authentication, and the credentials for each server are specified with --proxy-user and -U. The final destination is https://www.example.com/.
 
-## Sample code for proxy chaining using 4 proxy servers on Python
+## Sample code for proxy chaining using 4 proxy servers on Python (static chaining)
 
 ```
 import socket
